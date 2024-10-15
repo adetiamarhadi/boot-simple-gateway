@@ -19,4 +19,4 @@ spring:
             - Path=/backend/**
           filters:
             - StripPrefix=1
-            - RemoveResponseHeader=Access-Control-Allow-Origin
+            - RemoveResponseHeader=Access-Control-Allow-Origin, *
