@@ -6,7 +6,7 @@ spring:
           '[/**]':
             allowedOrigins:
               - "*"
-              - http://157.230.42.232
+              - "http://157.230.42.232"
             allowedMethods:
               - GET
               - OPTIONS
