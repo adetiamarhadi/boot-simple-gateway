@@ -9,3 +9,12 @@ spring:
               - Path=/backend
             filters:
               - RewritePath=/backend, /v1/hello
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://1.2.3.4"
+            allowedMethods:
+              - GET
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
