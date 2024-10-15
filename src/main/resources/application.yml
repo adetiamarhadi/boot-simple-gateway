@@ -15,6 +15,6 @@ spring:
             allowCredentials: true
       routes:
         - id: backend
-          uri: http://157.230.41.132:8080
+          uri: http://157.230.41.132:8080/v1/hello
           predicates:
-            - Path=/backend/**
+            - Path=/backend
