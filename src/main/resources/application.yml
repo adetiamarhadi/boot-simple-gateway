@@ -1,20 +1,11 @@
 spring:
   cloud:
     gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "*" # Replace with the actual origin you want to allow
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-            allowedHeaders:
-              - "*"
-            allowCredentials: true
-      routes:
-        - id: backend
-          uri: http://157.230.41.132:8080/v1/hello
-          predicates:
-            - Path=/backend
+      mvc:
+        routes:
+          - id: backend-service
+            uri: http://157.230.41.132:8080
+            predicates:
+              - Path=/backend
+            filters:
+              - RewritePath=/backend, /v1/hello
