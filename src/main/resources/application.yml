@@ -18,4 +18,4 @@ spring:
             - Path=/backend/**
           filters:
             - StripPrefix=1
-            - SetResponseHeader=Access-Control-Allow-Origin, http://157.230.41.132
+            - SetResponseHeader=Access-Control-Allow-Origin, http://157.230.42.232
