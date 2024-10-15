@@ -4,7 +4,9 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "*"
+            allowedOrigins:
+              - "*"
+              - http://157.230.42.232
             allowedMethods:
               - GET
               - OPTIONS
@@ -17,4 +19,3 @@ spring:
             - Path=/backend/**
           filters:
             - StripPrefix=1
-            - AddResponseHeader=access-control-allow-origin, http://157.230.42.232
