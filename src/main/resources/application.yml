@@ -1,20 +1,19 @@
 spring:
   cloud:
     gateway:
-      mvc:
-        routes:
-          - id: backend-service
-            uri: http://157.230.41.132:8080
-            predicates:
-              - Path=/backend
-            filters:
-              - RewritePath=/backend, /v1/hello
       globalcors:
         cors-configurations:
           '[/**]':
-            allowedOrigins: "http://1.2.3.4"
+            allowedOrigins: "*"
             allowedMethods:
               - GET
+              - OPTIONS
             allowedHeaders:
               - "*"
-            allowCredentials: true
+      routes:
+        - id: posts-route
+          uri: http://157.230.41.132:8080
+          predicates:
+            - Path=/backend/**
+          filters:
+            - StripPrefix=1
